@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8dad1fa21edaf4817fc1a6d3ae88f90a",
+    "content-hash": "6db569174031e27165dba7a3642ce636",
     "packages": [
         {
             "name": "brick/math",
@@ -1054,16 +1054,16 @@
         },
         {
             "name": "hashtagcms/hashtagcms",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hashtagcms/hashtagcms.git",
-                "reference": "feb80f66f705920ff014e369b594ade5bb3b49be"
+                "reference": "0e4ec6fbcc1087e21bd341d4ac1649e67bcbc854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hashtagcms/hashtagcms/zipball/feb80f66f705920ff014e369b594ade5bb3b49be",
-                "reference": "feb80f66f705920ff014e369b594ade5bb3b49be",
+                "url": "https://api.github.com/repos/hashtagcms/hashtagcms/zipball/0e4ec6fbcc1087e21bd341d4ac1649e67bcbc854",
+                "reference": "0e4ec6fbcc1087e21bd341d4ac1649e67bcbc854",
                 "shasum": ""
             },
             "require": {
@@ -1119,7 +1119,7 @@
             ],
             "support": {
                 "issues": "https://github.com/hashtagcms/hashtagcms/issues",
-                "source": "https://github.com/hashtagcms/hashtagcms/tree/v2.0.2"
+                "source": "https://github.com/hashtagcms/hashtagcms/tree/v2.0.3"
             },
             "funding": [
                 {
@@ -1127,7 +1127,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-14T09:21:05+00:00"
+            "time": "2026-01-16T05:11:07+00:00"
         },
         {
             "name": "laravel/framework",
