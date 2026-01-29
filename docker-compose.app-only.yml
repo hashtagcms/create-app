@@ -1,0 +1,35 @@
+# Example: Application-Only Docker Compose
+# Use this if you are running your own MySQL and Nginx/Reverse Proxy
+
+version: '3'
+services:
+
+  # PHP Application Service Only
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hashtagcms/create-app
+    container_name: hashtagcms-app-only
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www
+    ports:
+      - "${APP_PORT:-9000}:9000" # Expose FastCGI port to host
+    environment:
+      SERVICE_NAME: app
+      DB_HOST: host.docker.internal # Example: Connect to MySQL on host machine
+      DB_PORT: 3306
+      DB_DATABASE: hashtagcms
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    volumes:
+      - ./:/var/www
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # Allows container to talk to host machine IP
+    networks:
+      - hashtagcms-standalone
+
+networks:
+  hashtagcms-standalone:
+    driver: bridge

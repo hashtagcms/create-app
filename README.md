@@ -35,9 +35,25 @@ HashtagCMS is a headless-ready, API-centric Content Management System built on L
 
 ## 🛠 Installation
 
+### 🐳 Via Docker (Recommended)
+
+The easiest way to get started is using Docker. Ensure you have Docker and Docker Compose installed.
+
+For detailed Docker instructions and troubleshooting, see the [DOCKER-README.md](DOCKER-README.md).
+
+```bash
+git clone https://github.com/hashtagcms/create-app.git my-awesome-site
+cd my-awesome-site
+./cms build
+```
+
+Once the containers are running, visit `http://localhost:8081/install` to complete the setup.
+
+### 📦 Via Composer
+
 You can create a new project via Composer. This will assume you have PHP and Composer installed.
 
-### 1. Create Project
+#### 1. Create Project
 Run the following command in your terminal:
 
 ```bash

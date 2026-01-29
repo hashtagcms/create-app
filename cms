@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# A helper script to run commands inside the HashtagCMS app container or manage the environment
+# Usage: ./cms [artisan/composer/fresh] [arguments]
+
+CONTAINER_NAME=${APP_CONTAINER_NAME:-hashtagcms-app}
+
+# Check if Docker is running
+if ! docker info >/dev/null 2>&1; then
+    echo "❌ Error: Docker daemon is not running."
+    echo "Please start Docker Desktop and try again."
+    exit 1
+fi
+
+# Handle 'fresh' command to reset the environment
+if [ "$1" == "fresh" ]; then
+    # Check if port is in use (default 8080 or WEB_PORT) and kill it
+    CHECK_PORT=${WEB_PORT:-8081}
+    PID=$(lsof -t -i :$CHECK_PORT -sTCP:LISTEN)
+    if [ ! -z "$PID" ]; then
+        echo "⚔️  Port $CHECK_PORT is in use by PID $PID. Killing it to free up the address..."
+        kill -9 $PID
+        sleep 2 # Give OS time to release the port
+    fi
+
+    echo "💣 Resetting environment to fresh install..."
+    docker-compose down
+    echo "🧹 Removing database data and .env..."
+    rm -rf docker/mysql/*
+    rm -f .env
+    echo "🏗 Building and starting containers..."
+    # Ensure environment variables are passed to docker-compose with clean defaults
+    WEB_PORT=${WEB_PORT:-8081} \
+    DB_PORT_EXTERNAL=${DB_PORT_EXTERNAL:-3306} \
+    APP_CONTAINER_NAME=${APP_CONTAINER_NAME:-hashtagcms-app} \
+    docker-compose up -d --build
+    echo "⌛ Waiting 15s for database to initialize..."
+    sleep 15
+    echo "✨ Running HashtagCMS installation..."
+    docker exec -it "$CONTAINER_NAME" php artisan cms:install
+    exit 0
+fi
+
+# Handle 'build' command
+if [ "$1" == "build" ]; then
+    echo "🏗 Building and starting containers..."
+    WEB_PORT=${WEB_PORT:-8081} \
+    DB_PORT_EXTERNAL=${DB_PORT_EXTERNAL:-3306} \
+    APP_CONTAINER_NAME=${APP_CONTAINER_NAME:-hashtagcms-app} \
+    docker-compose up -d --build
+    exit 0
+fi
+
+# Default behavior: run everything else inside the container
+# Check if the container is running
+if [ ! "$(docker ps -q -f name=^/${CONTAINER_NAME}$)" ]; then
+    echo "Error: Container ${CONTAINER_NAME} is not running."
+    echo "Run 'docker-compose up -d' first."
+    exit 1
+fi
+
+# Pass all arguments to the container's shell
+docker exec -it "$CONTAINER_NAME" php "$@"
