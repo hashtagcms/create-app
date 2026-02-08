@@ -23,7 +23,7 @@ HashtagCMS is a headless-ready, API-centric Content Management System built on L
 -   **Multi-Tenancy**: Manage multiple sites, domains, and platforms from a single admin panel.
 -   **Module-Based Architecture**: Drag-and-drop module placement for dynamic layouts.
 -   **Smart Queries**: Fetch data via JSON configuration (Zero Code required for standard data fetching).
--   **Enterprise Ready**: Supports MongoDB, SSO (Pro), and high-traffic caching strategies.
+-   **Scale Ready**: Supports MongoDB, SSO (Extended), and high-traffic caching strategies.
 
 ## ✨ Features V2.0
 
@@ -63,6 +63,11 @@ composer create-project hashtagcms/create-app mysite
 ### 2. Database Setup
 
 By default, this starter kit is configured to use **SQLite** for instant setup (zero configuration).
+
+**Copy .env.example to .env**
+```bash
+cp .env.example .env
+``` 
 
 **To use MySQL/PostgreSQL:**
 1.  Open the `.env` file in your new project.

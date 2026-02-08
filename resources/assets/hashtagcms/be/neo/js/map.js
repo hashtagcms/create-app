@@ -1,2 +1,2 @@
-import { MapAPI } from '@hashtagcms/jskit';
+import { MapAPI } from '@hashtagcms/admin-ui-kit';
 window.MapApi = new MapAPI();

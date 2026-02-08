@@ -12,8 +12,8 @@ if (token) {
 window.axios = axios;
 
 
-// Helpers - Imported from @hashtagcms/jskit
-import { AdminConfig, Toast, Storage, Fetcher } from '@hashtagcms/jskit';
+// Helpers - Imported from @hashtagcms/admin-ui-kit
+import { AdminConfig, Toast, Storage, Fetcher } from '@hashtagcms/admin-ui-kit';
 
 window.AdminConfig = new AdminConfig();
 window.ToastGloabl = Toast;
@@ -35,7 +35,7 @@ import {
     LanguageCopier,
     CategoryPlatform, CategorySettings,
     ImageGallery
-} from '@hashtagcms/jskit';
+} from '@hashtagcms/admin-ui-kit';
 
 // Alias resolving if components had different names in import
 const PaginationView = Pagination;
