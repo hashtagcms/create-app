@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/hashtagcms/create-app.git"
+        "url": "git+https://github.com/hashtagcms/hashtagcms.git"
     },
     "keywords": [
         "HashtagCms",
@@ -19,9 +19,9 @@
     "author": "Marghoob Suleman",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/hashtagcms/create-app/issues"
+        "url": "https://github.com/hashtagcms/hashtagcms/issues"
     },
-    "homepage": "https://github.com/hashtagcms/create-app#readme",
+    "homepage": "https://github.com/hashtagcms/hashtagcms#readme",
     "scripts": {
         "dev": "webpack --mode development --watch",
         "dev:build": "webpack --mode development",

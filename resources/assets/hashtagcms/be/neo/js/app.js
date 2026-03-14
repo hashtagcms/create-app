@@ -12,8 +12,10 @@ if (token) {
 window.axios = axios;
 
 
-// Helpers - Imported from @hashtagcms/admin-ui-kit
-import { AdminConfig, Toast, Storage, Fetcher } from '@hashtagcms/admin-ui-kit';
+// Helpers - Imported from @hashtagcms/admin-sdk (Pure Logic)
+import { AdminConfig, Storage, Fetcher } from '@hashtagcms/admin-sdk';
+// Helpers - Imported from @hashtagcms/admin-ui-kit (UI Bound)
+import { Toast } from '@hashtagcms/admin-ui-kit';
 
 window.AdminConfig = new AdminConfig();
 window.ToastGloabl = Toast;
