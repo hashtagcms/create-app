@@ -13,7 +13,7 @@
 
 # HashtagCMS Starter Kit
 
-Welcome to the **Official HashtagCMS Starter Kit**. This boilerplate provides a production-ready application structure pre-configured with **Laravel 12** and **HashtagCMS 3.x**, allowing you to launch powerful, headless-capable Content Management Systems in seconds.
+Welcome to the **Official HashtagCMS Starter Kit**. This boilerplate provides a production-ready application structure pre-configured with **Laravel 13** and **HashtagCMS 3.x**, allowing you to launch powerful, headless-capable Content Management Systems in seconds.
 
 ## 🚀 About HashtagCMS
 
