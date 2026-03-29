@@ -11,8 +11,7 @@ services:
     restart: unless-stopped
     tty: true
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
@@ -52,7 +51,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "-proot"]
       timeout: 10s
       retries: 5
       start_period: 30s

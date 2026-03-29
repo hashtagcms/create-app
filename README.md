@@ -59,6 +59,7 @@ For detailed Docker instructions and troubleshooting, see the [DOCKER-README.md]
 ```bash
 git clone https://github.com/hashtagcms/create-app.git my-awesome-site
 cd my-awesome-site
+cp .env.example .env
 ./cms build
 ```
 
