@@ -14,8 +14,8 @@
     {!! $layoutManager->getMetaContent() !!}
     <title>{!! $layoutManager->getTitle() !!}</title>
     @php
-        $lottieFile = $layoutManager->getViewThemeFolder() . "._layout_.lottie";        
-        $bodyCss = $layoutManager->getBodyCss();
+        $lottieFile = $layoutManager->getViewThemeFolder() . "._layout_.lottie";
+        $bodyCss = $layoutManager->getFestivalCss();
         $bodyBackground = "";
         if (!empty($layoutManager->getBodyBackgroundImage())) {
             $bodyBackground = $layoutManager->getBodyBackgroundImage() . ";background-repeat: no-repeat;background-attachment: fixed;background-position: center;";
