@@ -16,7 +16,7 @@
     },
     "require": {
         "php": "^8.3",
-        "hashtagcms/hashtagcms": "3.0.5",
+        "hashtagcms/hashtagcms": "3.0.6",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0"
     },
